@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+<h2>Collapsed Borders</h2>
+<p>If you want the borders to collapse into one border, add the CSS border-collapse property.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Email</th>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Address</th>
+    <th>Actions</th>
+  </tr>
+
+  <% for(let i=0; i<datatable.length; i++) {%>
+    <tr>
+      <td>
+        <%= datatable[i].email%>
+      </td>
+      <td>
+        <%= datatable[i].firstName%>
+      </td>
+      <td>
+        <%= datatable[i].lastName%>
+      </td>
+      <td>
+        <%= datatable[i].address%>
+      </td>
+      <td>
+        <a href="/edit-crud?id=<%= datatable[i].id %>" type="button">Edit</a>
+        <a href="/delete-crud?id=<%= datatable[i].id %>" type="button">Delete</a>
+      </td>
+    </tr>
+ <% } %>
+
+
+</table>
+
+</body>
+</html>
+
